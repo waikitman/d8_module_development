@@ -1,0 +1,38 @@
+marvel.content:
+ path: '/marvel/{param}'
+ defaults:
+  _controller: '\Drupal\marvel\Controller\MarvelController::content'
+ _title: 'Our first route'
+ requirements:
+  _permission: 'access content'
+marvel.greeting_form:
+ path: '/admin/config/salutation-configuration'
+ defaults:
+  _form: '\Drupal\marvel\Form\SalutationConfigurationForm'
+  _title: 'Salutation configuration'
+ requirements:
+  _permission: 'administer site configuration'
+
+
+#marvel.greeting_form:
+# path: '/admin/config/salutation-configuration'
+# defaults:
+#  _form: '\Drupal\marvel\Form\SalutationConfigurationForm'
+#  _title: 'Config'
+# requirements:
+#  _permission: 'administer site configuration'
+
+#marvel.content:
+# path: 'marvel'
+ #path: '/marvel/{param}'
+ # options:
+ #  parameters:
+ #   param:
+ #    type: entity:node
+# defaults:
+#  _controller: '\Drupal\marvel\Controller\MarvelController::content'
+#  _title: our first route
+# requirements:
+#  permission: 'access content'
+
+

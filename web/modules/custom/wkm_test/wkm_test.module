@@ -1,0 +1,36 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: waiwai
+ * Date: 2019-01-07
+ * Time: 11:18
+ */
+
+/**
+ * Implements hook_form_alter
+ */
+use Drupal\Core\Form\FormStateInterface;
+
+function wkm_test_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // traditional way of altering form
+  dpm($form_id, "wkm_test_form_alter");
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter()
+ */
+function wkm_test_form_salutation_configuration_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  dpm($form_id, "wkm_test_form_salutation_configuration_form_alter");
+  $form['#submit'][] = "wkm_test_salutation_configuration_form_submit";
+  dpm($form['#submit']);
+}
+
+/**
+ * Custom submit handler for the form_salutation_configuration form.
+ *
+ * @param $form
+ * @param FormStateInterface $form_state
+ */
+function wkm_test_salutation_configuration_form_submit(&$form, FormStateInterface $form_state) {
+  dpm("wkm_test_salutation_configuration_form_submit");
+}

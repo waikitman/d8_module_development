@@ -1,0 +1,5 @@
+services:
+  marvel.salutation:
+    class: Drupal\marvel\MarvelSalutation
+    tags:
+      - {name: marvel_tag}
