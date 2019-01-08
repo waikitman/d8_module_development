@@ -41,15 +41,12 @@ class MarvelMailLogger implements LoggerInterface
 
   public function log($level, $message, array $context = [])
   {
-    //dsm($message);
     //dsm($context);
     if ($context['channel']) {
-      //dsm(__FUNCTION__, "for marvel channel");
       // https://api.drupal.org/api/drupal/core%21modules%21system%21config%21install%21system.site.yml/8.2.x
 //    $to = \Drupal::config('system.site')->get('mail');
-//    $langcode = \Drupal::config('system.site')->get('langcode');
-//    $site_name = \Drupal::config('system.site')->get('name');
 
+      $account = $context['user'];
       $to = $this->configFactory->get('system.site')->get('mail');
       $to = "waimanphp@gmail.com";
       $lang_code = $this->configFactory->get('system.site')->get('langcode');
@@ -65,10 +62,14 @@ class MarvelMailLogger implements LoggerInterface
         'marvel_log',
         $to,
         $lang_code,
-        ['message' => $body, 'subject' => $subject]
+        [
+          'message' => $body,
+          'subject' => $subject,
+          'user' => $account,
+        ]
       );
 
-      dsm($result, "\$result " . __FUNCTION__);
+      //dsm($result, "\$result " . __FUNCTION__);
     }
   }
 }

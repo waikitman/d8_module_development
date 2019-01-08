@@ -1,0 +1,33 @@
+<?php
+
+function marvel_install() {
+//  dsm("Install marvel module");
+//
+//  $system_mail = \Drupal::configFactory()->getEditable('system.mail');
+//  $mail_plugins = $system_mail->get('interface');
+//
+//  if (in_array("marvel", array_keys($mail_plugins))) {
+//    dsm("marvel plugin already exists");
+//    return;
+//  }
+//
+//  $mail_plugins['marvel'] = 'marvel_mail';
+//
+//  $system_mail->set('interface', $mail_plugins)->save();
+//
+//  dsm($system_mail->get('interface'), "2");
+}
+
+function marvel_uninstall() {
+  dsm("Uninstall marvel module");
+
+  $system_mail = \Drupal::configFactory()->getEditable('system.mail');
+  $mail_plugins = $system_mail->get('interface');
+
+  if (isset($mail_plugins['marvel'])) {
+    unset($mail_plugins['marvel']);
+    $system_mail->set('interface', $mail_plugins)->save();
+  }
+
+  dsm($system_mail->get('interface'), "3");
+}

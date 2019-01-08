@@ -33,6 +33,17 @@ function marvel_mail($key, &$message, $params) {
       $message['from'] = \Drupal::config('system.site')->get('mail');
       $message['subject'] = $params['subject'];
       $message['body'][] = $params['message'];
+      if ($params['user']) {
+        $user_message = "The user that was logged in: [current-user:name]";
+        $custom_message = \Drupal::token()->replace('The salutation text is:
+   [marvel:salutation]');
+        $message['body'][] = \Drupal::token()->replace(
+          $user_message,
+          ['current-user' => $params['user']]
+        );
+
+        $message['body'][] = $custom_message;
+      }
 
       break;
   }
