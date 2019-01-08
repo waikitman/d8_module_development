@@ -1,5 +1,19 @@
 services:
   marvel.salutation:
     class: Drupal\marvel\MarvelSalutation
+    arguments: ['@config.factory', '@event_dispatcher']
     tags:
       - {name: marvel_tag}
+  marvel.redirect_subscriber:
+    class: Drupal\marvel\EventSubscriber\MarvelRedirectSubscriber
+    arguments: ['@current_user']
+    tags:
+      - {name: event_subscriber}
+  marvel.logger.channel.salutation:
+    parent: logger.channel_base
+    arguments: ['salutation']
+  marvel.logger.salutation:
+    class: Drupal\marvel\Logger\MarvelMailLogger
+    arguments: ['@config.factory', '@logger.log_message_parser']
+    tags:
+      - {name: logger}

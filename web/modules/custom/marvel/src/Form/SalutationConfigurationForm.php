@@ -8,14 +8,34 @@
 
 namespace Drupal\marvel\Form;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Logger\LoggerChannelInterface;
+use Psr\Log\LoggerInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Configuration form definition for the salutation message.
  */
 class SalutationConfigurationForm extends ConfigFormBase
 {
+  protected $logger;
+
+  public function __construct(ConfigFactoryInterface $config_factory, LoggerChannelInterface $logger)
+  {
+    $this->logger = $logger;
+    parent::__construct($config_factory);
+  }
+
+  public static function create(ContainerInterface $container)
+  {
+    return new static(
+      $container->get('config.factory'),
+      $container->get('marvel.logger.channel.salutation')
+    );
+  }
+
   /**
    * {@inheritdoc}
    */
@@ -63,6 +83,8 @@ class SalutationConfigurationForm extends ConfigFormBase
     $this->config('marvel.custom_salutation')
       ->set('salutation', $form_state->getValue('salutation'))
       ->save();
+
+    $this->logger->info('The marvel salutation has been changed to @message', ['@message' => $form_state->getValue('salutation')]);
 
     parent::submitForm($form, $form_state);
   }

@@ -50,7 +50,9 @@ class MarvelController extends ControllerBase
     dpm(\Drupal::currentUser()->getAccountName());
     //$character = (string)$param;
     $output = $this->salutation->getSalutation();
-    
+
+    \Drupal::logger('marvel')->info("Custom: MarvelController::content");
+
     return [
       '#markup' => $output,
     ];

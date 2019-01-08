@@ -22,3 +22,18 @@ function marvel_help($route_name, RouteMatchInterface $route_match) {
       return $output;
   }
 }
+
+/**
+ * Implements hook_mail().
+ */
+function marvel_mail($key, &$message, $params) {
+  switch($key) {
+    case 'marvel_log':
+      //dsm($message, "\$message in {__FUNCTION__}");
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['message'];
+
+      break;
+  }
+}

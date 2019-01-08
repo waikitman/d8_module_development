@@ -1,0 +1,69 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: waiwai
+ * Date: 2019-01-07
+ * Time: 14:28
+ */
+
+namespace Drupal\marvel\Plugin\Block;
+use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\marvel\MarvelSalutation as MarvelSalutationService;
+/**
+ * Hello World Salutation block.
+ *
+ * @Block(
+ * id = "marvel_salutation_block",
+ * admin_label = @Translation("Hello world salutation"),
+ * )
+ */
+class MarvelSalutationBlock extends BlockBase implements
+  ContainerFactoryPluginInterface {
+  /**
+   * Drupal\marvel\MarvelSalutation definition.
+   *
+   * @var \Drupal\marvel\MarvelSalutation
+   */
+  protected $salutation;
+  /**
+   * Construct.
+   *
+   * @param array $configuration
+   *   A configuration array containing information about the plugin
+  instance.
+   * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
+   * @param string $plugin_definition
+  [ 52 ]
+
+  Creating Your First Module
+   *   The plugin implementation definition.
+   * @param \Drupal\marvel\MarvelSalutation $salutation
+   */
+  public function __construct(array $configuration, $plugin_id,
+                              $plugin_definition, MarvelSalutationService $salutation) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->salutation = $salutation;
+  }
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array
+  $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('marvel.salutation')
+    ); }
+  /**
+   * {@inheritdoc}
+   */
+  public function build() {
+    return [
+      '#markup' => $this->salutation->getSalutation(),
+    ];
+  }
+}

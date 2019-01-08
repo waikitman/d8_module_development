@@ -5,6 +5,12 @@ marvel.content:
  _title: 'Our first route'
  requirements:
   _permission: 'access content'
+marvel.examples:
+ path: '/marvel/examples'
+ defaults:
+  _controller: '\Drupal\marvel\Controller\MarvelLinkExampleController::content'
+ requirements:
+  _permission: 'access content'
 marvel.greeting_form:
  path: '/admin/config/salutation-configuration'
  defaults:
@@ -12,6 +18,24 @@ marvel.greeting_form:
   _title: 'Salutation configuration'
  requirements:
   _permission: 'administer site configuration'
+marvel.responseTextExample:
+ path: /marvel/rte
+ defaults:
+  _controller: '\Drupal\marvel\Controller\MarvelLinkExampleController::responseTextExample'
+ requirements:
+  _permission: 'access content'
+marvel.redirectResponseExample:
+ path: /marvel/rre
+ defaults:
+  _controller: '\Drupal\marvel\Controller\MarvelLinkExampleController::redirectResponseExample'
+ requirements:
+  _permission: 'access content'
+marvel.restrict:
+ path: /restrict
+ defaults:
+  _controller: '\Drupal\marvel\Controller\MarvelLinkExampleController::restrictExample'
+ requirements:
+  _permission: 'access content'
 
 
 #marvel.greeting_form:
