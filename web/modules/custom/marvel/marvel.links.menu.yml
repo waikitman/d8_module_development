@@ -1,0 +1,6 @@
+marvel.salutation:
+  title: 'Hello'
+  description: 'Get a salutation'
+  route_name: marvel.examples
+  menu_name: main
+  weight: 0

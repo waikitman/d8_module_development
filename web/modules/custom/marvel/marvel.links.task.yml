@@ -1,0 +1,9 @@
+marvel.link.page:
+  route_name: marvel.content
+  title: 'Salutation page'
+  base_route: marvel.content
+marvel.link.config:
+  route_name: marvel.greeting_form
+  title: 'Config'
+  base_route: marvel.content
+  weight: 100

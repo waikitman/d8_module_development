@@ -1,0 +1,11 @@
+<section {{ attributes }}>
+    <p>
+        Overridden template
+        {{ salutation }}
+    </p>
+    {% if target %}
+    <p>
+    <span class="salutation--target">{{ target }}</span>
+    </p>
+    {% endif %}
+</section>

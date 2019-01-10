@@ -1,0 +1,9 @@
+wkm-test-library:
+  version: 1.x
+  css:
+    theme:
+      css/wkm_test.css: {}
+  js:
+    js/wkm_test.js: {}
+  dependencies:
+    - core/jquery

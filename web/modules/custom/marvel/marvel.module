@@ -48,3 +48,66 @@ function marvel_mail($key, &$message, $params) {
       break;
   }
 }
+
+
+/**
+ * Implements hook_theme().
+ */
+function marvel_theme($existing, $type, $theme, $path)
+{
+  //dpm($existing, __FUNCTION__);
+  return [
+    'marvel_salutation' => [
+      'variables' => [
+        'salutation' => null,
+        'target' => null,
+        'overridden' => true,
+      ]
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function marvel_theme_suggestions_marvel_salutation(array $variables)
+{
+  $suggestions = [];
+
+  if ($variables['overridden'] == true) {
+    dsm("Message has been overridden");
+    $suggestions[] = 'marvel_salutation__overridden';
+    //$suggestions[] = 'randommoduleA_marvel_salutation__overridden';
+    //$suggestions[] = 'randommoduleB_marvel_salutation__overridden';
+  }
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function marvel_preprocess_marvel_salutation(&$variables)
+{
+  dsm($variables,__FUNCTION__);
+  $salutation = $variables['salutation'];
+
+  $variables['attributes'] = [
+    'class' => 'marvel-container'
+  ];
+
+}
+
+/**
+ * @param $variables
+ */
+function marvel_preprocess_marvel_salutation__overridden(&$variables)
+{
+  dsm($variables,__FUNCTION__);
+  $salutation = $variables['salutation'];
+
+  $variables['attributes'] = [
+    'class' => 'marvel-container-overridden'
+  ];
+
+}

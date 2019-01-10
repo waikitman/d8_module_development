@@ -1,0 +1,25 @@
+wkm.content:
+  path: wkm
+  defaults:
+    _controller: '\Drupal\wkm_test\Controller\WkmController::content'
+  requirements:
+    _permission: 'access content'
+wkm.example.state:
+  path: wkm/storage/state-example
+  defaults:
+    _controller: '\Drupal\wkm_test\Controller\WkmController::state_example'
+  requirements:
+    _permission: 'access content'
+wkm.example.tempstore:
+  path: wkm/storage/tempstore-example
+  defaults:
+    _controller: '\Drupal\wkm_test\Controller\WkmController::tempstore_example'
+  requirements:
+    _access: true
+wkm.example.form:
+  path: admin/config/wkm-test-example-form
+  defaults:
+    _form: '\Drupal\wkm_test\Form\WkmTestExampleForm'
+    _title: 'Wai Example form'
+  requirements:
+    _permission: 'administer site configuration'

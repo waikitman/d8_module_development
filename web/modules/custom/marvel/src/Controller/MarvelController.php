@@ -47,14 +47,17 @@ class MarvelController extends ControllerBase
    * @return array
    */
   function content($param = '') {
-    dpm(\Drupal::currentUser()->getAccountName());
+    //dpm(\Drupal::currentUser()->getAccountName());
     //$character = (string)$param;
     $output = $this->salutation->getSalutation();
 
     \Drupal::logger('marvel')->info("Custom: MarvelController::content");
 
     return [
-      '#markup' => $output,
+      '#theme' => 'marvel_salutation',
+      '#salutation' => "Hi there",
+      '#target' => '',
+      '#override' => '',
     ];
   }
 }

@@ -1,5 +1,5 @@
 marvel.content:
- path: '/marvel/{param}'
+ path: '/marvel'
  defaults:
   _controller: '\Drupal\marvel\Controller\MarvelController::content'
  _title: 'Our first route'

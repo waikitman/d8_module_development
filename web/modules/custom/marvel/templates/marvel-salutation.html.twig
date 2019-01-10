@@ -1,0 +1,12 @@
+<section {{ attributes }}>
+    <p>
+        Original template
+        {{ salutation }}
+    </p>
+    {% if target %}
+    <p>
+    <span class="salutation--target">{{ target }}</span>
+    </p>
+    {% endif %}
+    {{ title_suffix }}
+</section>
