@@ -10,6 +10,7 @@ namespace Drupal\wkm_test\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Url;
 
+
 class WkmController extends ControllerBase
 {
 
@@ -72,18 +73,35 @@ class WkmController extends ControllerBase
   }
 
   public function tempstore_example() {
+    // private_tempstore
     $factory = \Drupal::service('user.private_tempstore');
-    $store = $factory->get('wkm_test.my_collection');
-    $store->set('first_name', 'Wai');
-    $store->set('last_name', 'Man');
+    $privateStore = $factory->get('wkm_test.my_collection');
+    $privateStore->set('first_name', 'Wai');
+    $privateStore->set('last_name', 'Man');
 //    $store->delete('name');
 //    $store->delete('type');
-    dpm($store->getMetadata('first_name'));
+    dsm($privateStore->getMetadata('first_name'));
+
+    // shared tempstore
+    $sharedFactory = \Drupal::service('tempstore.shared');
+    $sharedStore = $sharedFactory->get('wkm_test.my_collection');
+    $sharedStore->set('shared_first_name', 'Lucas');
+    dsm($sharedStore->getMetadata('shared_first_name'));
+
+    // user data
+    /** @var UserDataInterface $userData */
+    $userData = \Drupal::service('user.data');
+    $userData->set('wkm_test', \Drupal::currentUser()->getAccount()->id(), 'nickname', 'Turbo');
+    $userData->set('wkm_test', \Drupal::currentUser()->getAccount()->id(), 'preferences', new \stdClass());
+    $nickname = $userData->get('wkm_test', \Drupal::currentUser()->getAccount()->id(), 'nickname');
+    dsm($nickname);
 
     return[
       '#markup' =>
         "Example of tempstore<br>" .
-        "Stored value is {$store->get('first_name')} {$store->get('last_name')}"
+        "Private stored value is {$privateStore->get('first_name')} {$privateStore->get('last_name')}" .
+        "Shared stored value is {$sharedStore->get('shared_first_name')}" .
+        print_r($sharedStore->getMetadata('shared_first_name'), 1)
       ,
     ];
   }

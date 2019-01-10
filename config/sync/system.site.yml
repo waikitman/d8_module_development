@@ -1,0 +1,14 @@
+uuid: 61899eb2-f413-4145-b509-0d5aa5ab7dc0
+name: Drupal
+mail: wai.man@iag.com.au
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
