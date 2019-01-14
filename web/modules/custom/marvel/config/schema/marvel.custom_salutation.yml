@@ -1,0 +1,7 @@
+marvel.custom_salutation:
+  type: config_object
+  label: 'Marvel salutation settings'
+  mapping:
+    salutation:
+      type: string
+      label: 'The salutation message'

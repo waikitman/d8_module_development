@@ -1,0 +1,12 @@
+sports.examples.db:
+  path: sports/examples
+  defaults:
+    _controller: \Drupal\sports\Controller\SportsController::content
+  requirements:
+    _access: 'TRUE'
+sports.players:
+  path: sports/players
+  defaults:
+    _controller: \Drupal\sports\Controller\SportsController::players
+  requirements:
+    _access: 'TRUE'

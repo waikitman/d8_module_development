@@ -1,0 +1,6 @@
+name: Sports
+description: Testing out database api
+type: module
+package: custom
+version: 1.0
+core: 8.x

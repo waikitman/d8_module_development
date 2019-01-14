@@ -63,7 +63,9 @@ class WkmTestExampleForm extends ConfigFormBase
     // $this->config('wkm_test.settings')->set('api_key', $api_key)->save();
     // The above example does not work. Config objects are immutable by default.
     // https://www.drupal.org/node/2407153
-    \Drupal::configFactory()->getEditable('wkm_test.settings')->set('api_key', $api_key)->save();
+    //\Drupal::configFactory()->getEditable('wkm_test.settings')->set('api_key', $api_key)->save();
+    $factory = \Drupal::service('config.factory');
+    $factory->getEditable('wkm_test.settings')->set('api_key', $api_key)->save();
 
     $stored_api_key = $this->config('wkm_test.settings')->get('api_key');
 

@@ -80,13 +80,13 @@ class WkmController extends ControllerBase
     $privateStore->set('last_name', 'Man');
 //    $store->delete('name');
 //    $store->delete('type');
-    dsm($privateStore->getMetadata('first_name'));
+    //dsm($privateStore->getMetadata('first_name'));
 
     // shared tempstore
     $sharedFactory = \Drupal::service('tempstore.shared');
     $sharedStore = $sharedFactory->get('wkm_test.my_collection');
     $sharedStore->set('shared_first_name', 'Lucas');
-    dsm($sharedStore->getMetadata('shared_first_name'));
+    //dsm($sharedStore->getMetadata('shared_first_name'));
 
     // user data
     /** @var UserDataInterface $userData */
@@ -94,7 +94,17 @@ class WkmController extends ControllerBase
     $userData->set('wkm_test', \Drupal::currentUser()->getAccount()->id(), 'nickname', 'Turbo');
     $userData->set('wkm_test', \Drupal::currentUser()->getAccount()->id(), 'preferences', new \stdClass());
     $nickname = $userData->get('wkm_test', \Drupal::currentUser()->getAccount()->id(), 'nickname');
-    dsm($nickname);
+    //dsm($nickname);
+
+    $query = \Drupal::entityQuery('node');
+    $query->condition('type', 'page')
+      ->condition('status', true)
+      ->range(0, 10)
+      ->sort('created', 'DESC');
+    $ids = $query->execute();
+    //dpq($query);
+    dsm($query);
+    dsm($ids);
 
     return[
       '#markup' =>
@@ -103,6 +113,17 @@ class WkmController extends ControllerBase
         "Shared stored value is {$sharedStore->get('shared_first_name')}" .
         print_r($sharedStore->getMetadata('shared_first_name'), 1)
       ,
+    ];
+  }
+
+  public function user_info() {
+    dsm(__FUNCTION__);
+
+    $user = \Drupal::currentUser();
+    dsm($user);
+    
+    return [
+      '#markup' => 'hi'
     ];
   }
 }
