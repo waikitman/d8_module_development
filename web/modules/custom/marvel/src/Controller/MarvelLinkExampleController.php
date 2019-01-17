@@ -28,6 +28,13 @@ class MarvelLinkExampleController extends ControllerBase
     $items[] = \Drupal::service('link_generator')->generate('RRE', Url::fromRoute('marvel.redirectResponseExample'));
 
 
+    $link = Url::fromRoute('marvel.access_check');
+    /**
+     * You can check to see whether or not user has access to view url before showing link.
+     */
+    //if ($link->access()) {
+      $items[] = \Drupal::service('link_generator')->generate("Service for checking access", $link);
+    //}
     //      'variables' => ['items' => [], 'title' => '', 'list_type' => 'ul', 'wrapper_attributes' => [], 'attributes' => [], 'empty' => NULL, 'context' => []],
     return [
       '#theme' => 'item_list',
@@ -46,11 +53,11 @@ class MarvelLinkExampleController extends ControllerBase
     return new RedirectResponse("marvel.content"); // node/1
   }
 
-  public function restrictExample() {
-    return new Response("Response text");
+  public function accessCheck() {
+    //return new Response("Response text");
     // bypass majority of theming from Drupal.
-//    return [
-//      '#markup' => "Restricted area",
-//    ];
+    return [
+      '#markup' => "Allows access",
+    ];
   }
 }

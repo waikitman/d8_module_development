@@ -117,11 +117,22 @@ class WkmController extends ControllerBase
   }
 
   public function user_info() {
-    dsm(__FUNCTION__);
+    // Statically
+    $accountProxy = \Drupal::currentUser();
+    //dsm($user);
 
-    $user = \Drupal::currentUser();
-    dsm($user);
-    
+    dsm($accountProxy->isAnonymous());
+    dsm($accountProxy->isAuthenticated());
+    dsm($accountProxy->getRoles());
+//    $actualUser = \Drupal::entityTypeManager()->getStorage('user')->load(accountProxy->id());
+//    dsm($actualUser);
+    $account = $accountProxy->getAccount();
+    //dsm($account);
+
+    dsm($account->isAnonymous());
+    dsm($account->isAuthenticated());
+    dsm($account->getRoles());
+
     return [
       '#markup' => 'hi'
     ];

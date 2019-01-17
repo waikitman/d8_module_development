@@ -30,12 +30,12 @@ marvel.redirectResponseExample:
   _controller: '\Drupal\marvel\Controller\MarvelLinkExampleController::redirectResponseExample'
  requirements:
   _permission: 'access content'
-marvel.restrict:
- path: /restrict
+marvel.access_check:
+ path: marvel/access-check
  defaults:
-  _controller: '\Drupal\marvel\Controller\MarvelLinkExampleController::restrictExample'
+  _controller: '\Drupal\marvel\Controller\MarvelLinkExampleController::accessCheck'
  requirements:
-  _permission: 'access content'
+  _marvel_access_check: 'TRUE'
 
 
 #marvel.greeting_form:

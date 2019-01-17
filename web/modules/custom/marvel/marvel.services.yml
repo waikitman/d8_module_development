@@ -17,3 +17,8 @@ services:
     arguments: ['@config.factory', '@logger.log_message_parser']
     tags:
       - {name: logger}
+  marvel.access_checker:
+    class: \Drupal\marvel\Access\MarvelAccess
+    arguments: ['@config.factory']
+    tags:
+      - { name: access_check, applies_to: _marvel_access_check }
