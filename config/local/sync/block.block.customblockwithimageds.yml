@@ -1,0 +1,25 @@
+uuid: 6a1d70b0-a3fa-46d6-a4cb-cf0585312ae7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic_block_with_image:c4dcdab5-506a-4c64-aa41-393a80e8fbf6'
+  module:
+    - block_content
+  theme:
+    - bootstrap
+id: customblockwithimageds
+theme: bootstrap
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'block_content:c4dcdab5-506a-4c64-aa41-393a80e8fbf6'
+settings:
+  id: 'block_content:c4dcdab5-506a-4c64-aa41-393a80e8fbf6'
+  label: 'Custom block with image DS'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

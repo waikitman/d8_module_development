@@ -1,0 +1,25 @@
+uuid: 84f1711e-2633-445d-a201-9cb766ebff52
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:53ef1b09-7af9-4845-9f44-67ba8493bc0e'
+  module:
+    - block_content
+  theme:
+    - devclassy
+id: jumbotronexample
+theme: devclassy
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'block_content:53ef1b09-7af9-4845-9f44-67ba8493bc0e'
+settings:
+  id: 'block_content:53ef1b09-7af9-4845-9f44-67ba8493bc0e'
+  label: 'Jumbotron example'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

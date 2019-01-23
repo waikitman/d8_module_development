@@ -1,0 +1,25 @@
+uuid: a2d1175a-7226-4f01-b2a5-1fcf000922cd
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic_block_with_image:c4dcdab5-506a-4c64-aa41-393a80e8fbf6'
+  module:
+    - block_content
+  theme:
+    - devclassy
+id: devclassy_customblockwithanimage
+theme: devclassy
+region: featured_bottom_first
+weight: -8
+provider: null
+plugin: 'block_content:c4dcdab5-506a-4c64-aa41-393a80e8fbf6'
+settings:
+  id: 'block_content:c4dcdab5-506a-4c64-aa41-393a80e8fbf6'
+  label: 'Custom block with an image'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

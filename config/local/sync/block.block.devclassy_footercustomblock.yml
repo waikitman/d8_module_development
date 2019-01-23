@@ -1,0 +1,25 @@
+uuid: 7a8bb97a-0e0d-4e2f-8758-0769e95233f7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:127ffbd1-28b4-4801-8a13-4b284c887d2a'
+  module:
+    - block_content
+  theme:
+    - devclassy
+id: devclassy_footercustomblock
+theme: devclassy
+region: footer_second
+weight: -7
+provider: null
+plugin: 'block_content:127ffbd1-28b4-4801-8a13-4b284c887d2a'
+settings:
+  id: 'block_content:127ffbd1-28b4-4801-8a13-4b284c887d2a'
+  label: 'Footer custom block'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

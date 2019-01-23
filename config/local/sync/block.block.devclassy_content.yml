@@ -1,0 +1,22 @@
+uuid: 721991c2-14d3-426b-9215-8b5dd262cbbd
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - devclassy
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: devclassy_content
+theme: devclassy
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

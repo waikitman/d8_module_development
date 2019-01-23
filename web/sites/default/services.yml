@@ -1,4 +1,3 @@
-parameters: {}
-#parameters:
-#    http.response.debug_cacheability_headers: true
-#    twig.config: { debug: true, auto_reload: true, cache: false }
+parameters:
+    http.response.debug_cacheability_headers: true
+    twig.config: { debug: true, auto_reload: true, cache: false }

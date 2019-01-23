@@ -1,0 +1,10 @@
+uuid: 43bba6b4-7783-46af-b8a4-6a789981cc3a
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.goto_asset
+label: 'Goto asset'
+targetEntityType: media
+cache: true
