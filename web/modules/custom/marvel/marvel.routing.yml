@@ -37,7 +37,6 @@ marvel.access_check:
  requirements:
   _marvel_access_check: 'TRUE'
 
-
 #marvel.greeting_form:
 # path: '/admin/config/salutation-configuration'
 # defaults:

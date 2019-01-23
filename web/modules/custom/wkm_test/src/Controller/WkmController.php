@@ -7,26 +7,31 @@
  */
 namespace Drupal\wkm_test\Controller;
 
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\RemoveCommand;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
 class WkmController extends ControllerBase
 {
 
   public function content() {
-    $links = [
-      [
-        'title' => 'Link 1',
-        'url' => URL::fromRoute("<front>")
-      ],
-      [
-        'title' => 'Link 2',
-        'url' => URL::fromRoute("marvel.examples")
-      ],
-    ];
+    $link_options = ['attributes' => ['class' => 'use-ajax']];
 
+    $links[] = ['title' => 'Front page', 'url' => URL::fromRoute("<front>")];
 
+    $links[] = ['title' => 'Ajax link', 'url' => URL::fromRoute("wkm.example.response", [], $link_options)];
+
+    $moduleHandler = \Drupal::service('module_handler');
+    if ($moduleHandler->moduleExists('marvel')) {
+      $links[] = ['title' => 'Link 2', 'url' => URL::fromRoute("marvel.examples")];
+    }
+
+//    $url = Url::fromRoute('hello_world.hide_block');
+//    $url->setOption('attributes', ['class' => 'use-ajax']);
 
 //    $url = URL::fromRoute("<front>");
 //    $link = \Drupal::linkGenerator()->generate("Test link", $url);
@@ -40,10 +45,20 @@ class WkmController extends ControllerBase
 //      '#markup' => "WKM example"
 //    ];
 
-    return [
+
+
+
+    $renderable = [
       '#theme' => 'links',
       '#links' => $links,
       '#set_active_class' => true,
+    ];
+
+    $link_list_html = \Drupal::service('renderer')->render($renderable);
+
+    return [
+      '#theme' => 'wkm_test_main',
+      '#link_list' => $link_list_html
     ];
   }
 
@@ -133,8 +148,26 @@ class WkmController extends ControllerBase
     dsm($account->isAuthenticated());
     dsm($account->getRoles());
 
-    return [
-      '#markup' => 'hi'
-    ];
+    $build['#markup'] = '<div class="clock">What is the time?</div>';
+    $build['#attached']['library'][] = 'wkm_test/wkm_test_clock';
+    return $build;
+
+//    return [
+//      '#markup' => '<div class="clock">What is the time?</div>',
+//      ];
   }
+
+  public function ajax_response(Request $request) {
+    if (!$request->isXmlHttpRequest()) {
+      dsm("Exception in ", __FUNCTION__);
+      throw new NotFoundHttpException();
+    }
+
+    $response = new AjaxResponse();
+    $command = new RemoveCommand('.footer');
+    $response->addCommand($command);
+
+    return $response;
+  }
+
 }

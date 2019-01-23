@@ -1,20 +1,38 @@
-global-styling:
-  css:
-    theme:
-      css/colors.css: {}
-      css/print.css: { media: print }
-  js:
-    js/scripts.js: {}
+#global-styling:
+#  css:
+#    theme:
+#      css/colors.css: {}
+#      css/print.css: { media: print }
+#  js:
+#    js/scripts.js: {}
 
 #slick
-slick:
+#slick:
+#  version: VERSION
+#  css:
+#    theme:
+#      vendor/slick/slick.css: {}
+#  js:
+#    vendor/slick/slick.css: {}
+#  dependencies:
+#    - core/jquery
+
+# usage {{ attach_library('devclassy/slick') }}
+
+#messages:
+#  version: VERSION
+#  css:
+#    theme:
+#      css/messages.css: {}
+
+webfonts:
   version: VERSION
   css:
     theme:
-      vendor/slick/slick.css: {}
-  js:
-    vendor/slick/slick.css: {}
-  dependencies:
-    - core/jquery
+      //fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Roboto+Slab: { type: external }
 
-# usage {{ attach_library('devclassy/slick') }}
+font-awesome:
+  version: 4.3.0
+  css:
+    theme:
+      vendor/components/font-awesome/css/fontawesome.css: {}

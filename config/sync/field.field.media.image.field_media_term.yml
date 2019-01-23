@@ -1,0 +1,29 @@
+uuid: dd20536f-bbad-4d03-8b63-010635c4fd36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_term
+    - media.type.image
+    - taxonomy.vocabulary.media
+id: media.image.field_media_term
+field_name: field_media_term
+entity_type: media
+bundle: image
+label: 'Media term'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      media: media
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

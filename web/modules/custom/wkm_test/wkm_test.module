@@ -48,6 +48,11 @@ function wkm_test_theme($existing, $type, $theme, $path)
         'title' => null,
         'characters' => null,
       ]
-    ]
+    ],
+    'wkm_test_main' => [
+      'variables' => [
+        'link_list' => null,
+      ]
+    ],
   ];
 }

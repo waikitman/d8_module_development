@@ -7,3 +7,12 @@ wkm-test-library:
     js/wkm_test.js: {}
   dependencies:
     - core/jquery
+
+wkm_test_clock:
+  version: VERSION
+  js:
+    js/wkm_test_clock.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once

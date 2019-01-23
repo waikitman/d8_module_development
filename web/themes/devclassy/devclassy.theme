@@ -20,3 +20,28 @@ function devclassy_preprocess_html(&$variables) {
   }
 
 }
+
+function devclassy_preprocess_page(&$variables) {
+  //dsm($variables['attributes'], __FUNCTION__);
+  $variables['foo'] = "bar";
+}
+
+function devclassy_preprocess_block(&$variables) {
+  $id = $variables['attributes']['id'];
+
+  //dpm($id);
+  $custom_blocks = [
+    'block-devclassy-customblockwithanimage',
+    'block-devclassy-customblockwithimagenonds'
+  ];
+
+  if (in_array($id, $custom_blocks)) {
+    $variables['attributes']['class'] = 'col-md-6';
+  }
+}
+
+function devclassy_preprocess_block__devclassy_footercustomblock(&$variables) {
+  dsm(__FUNCTION__);
+  $variables['title_attributes'] = ['id' => 'footer-custom-block-wkm', 'class' => 'h2'];
+
+}

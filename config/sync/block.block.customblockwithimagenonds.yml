@@ -1,0 +1,25 @@
+uuid: 1fd93b03-458b-4572-8664-4fd2b917839d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic_block_with_image:8d1e8501-9452-4a7e-9832-83751e61bc93'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: customblockwithimagenonds
+theme: bartik
+region: featured_bottom_second
+weight: 0
+provider: null
+plugin: 'block_content:8d1e8501-9452-4a7e-9832-83751e61bc93'
+settings:
+  id: 'block_content:8d1e8501-9452-4a7e-9832-83751e61bc93'
+  label: 'Custom block with image non-DS'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

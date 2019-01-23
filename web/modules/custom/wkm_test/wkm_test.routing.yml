@@ -29,3 +29,9 @@ wkm.example.user:
     _controller: '\Drupal\wkm_test\Controller\WkmController::user_info'
   requirements:
     _access: 'TRUE'
+wkm.example.response:
+  path: wkm/ajax-response
+  defaults:
+    _controller: '\Drupal\wkm_test\Controller\WkmController::ajax_response'
+  requirements:
+    _access: 'TRUE'

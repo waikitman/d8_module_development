@@ -1,0 +1,22 @@
+uuid: 542c4403-8164-4536-ba7d-f5d09146336b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - devclassy
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: devclassy_local_tasks
+theme: devclassy
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

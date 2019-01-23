@@ -1,0 +1,29 @@
+uuid: 9c26d56d-22ce-4c62-b3cd-24fac32e6be2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_term
+    - media.type.file
+    - taxonomy.vocabulary.media
+id: media.file.field_media_term
+field_name: field_media_term
+entity_type: media
+bundle: file
+label: 'Media term'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      media: media
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
