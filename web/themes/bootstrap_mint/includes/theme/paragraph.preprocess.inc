@@ -19,9 +19,9 @@ function bootstrap_mint_preprocess_paragraph__wysiwyg(&$variables) {
 
   $paragraph = $variables['paragraph'];
   $text = $paragraph->get('field_text_long')->getValue();
-  dpm($text);
-  $variables['trimmed_long_text'] = substr($text[0]['value'], 10, 100);
 
+  $variables['trimmed_long_text'] = $text[0]['value'];
+dpm($text[0]['value']);
 
 }
 

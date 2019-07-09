@@ -7,11 +7,12 @@ description: 'Bootstrap Mint is a fully responsive <a href="https://www.drupal.o
 #Libraries
 libraries:
   - bootstrap_mint/bootstrap
-  - bootstrap_mint/googlefonts-exo2
+#  - bootstrap_mint/googlefonts-exo2
   - bootstrap_mint/font-awesome
   - bootstrap_mint/smart-menus
   - bootstrap_mint/global-components
   - bootstrap_mint/maintenance-page
+  - bootstrap_mint/cloud-typography
 
 #Regions
 regions:

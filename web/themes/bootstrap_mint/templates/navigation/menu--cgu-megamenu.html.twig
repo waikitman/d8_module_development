@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Bootstrap Mint's theme implementation to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *
+ * @ingroup templates
+ */
+#}
+
+{% if items %}
+<ul role="menubar" aria-hidden="false"
+    id="main-menu" {{ attributes.addClass('nav', 'megamenu', 'list-reset', 'level-1') }}>
+    <li class="nav-heading visible-xs visible-sm">Insurance products</li>
+
+    {% for item in items %}
+        {% set classes = [
+            'has-subnav',
+        ] %}
+    <li class="{{ item.attributes.addClass(classes) }}">
+        <a href="#">
+            <span class="">{{ item.title }}</span>
+        </a>
+        {% if item.is_expanded and item.below %}
+            <div class="level-2">
+            <ul class="list-reset">
+                <li class="back visible-xs visible-sm">
+                    <a href="#">
+                        <span>Back</span>
+                    </a>
+                </li>
+                <li class="subnav-heading visible-xs visible-sm">{{ item.title }} }}</li>
+                {% for child in item.below %}
+                <li>
+                {{ link(child.title, child.url) }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}

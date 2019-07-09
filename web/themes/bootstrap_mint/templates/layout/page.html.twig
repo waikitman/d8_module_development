@@ -67,94 +67,145 @@
 #}
 
 <!-- Header and Navbar -->
-<header class="main-header">
-<!-- Sliding Header Widget -->
-{% if is_front %}
-  {% if page.sliding_header_one or page.sliding_header_two %}
-    <div class="slidewidget">
-	<div class="wrapper">
-      <!-- start: Container -->
-      <div class="container">
-        
-        <div class="row">
-          <div id="sliding-header-wrap">
-          <!-- Slide first region -->
-          
-          {% if page.sliding_header_one %}
-            <div class = {{ slidewidget_first }}>
-              {{ page.sliding_header_one }}
-            </div>
-          {% endif %}
-          
-          <!-- End slide first region -->
-          <!-- Slide second region -->
-          
-          {% if page.sliding_header_two %}
-            <div class = {{ slidewidget_class }}>
-              {{ page.sliding_header_two }}
-            </div>
-          {% endif %}
-          
-          <!-- End slide second region -->
-          
-		  </div>
-        </div>
-      </div>
-	  <!-- end: Container -->
-	  </div>
-	  <div class="toggle-switch"><div class="fa fa-gear fa-spin"></div></div>
-    </div>
-  {% endif %}
-{% endif %}
-<!--Sliding Header Widget -->
-  <nav class="navbar topnav navbar-default" role="navigation">
+<header class="cgu-global-header refresh">
+  <div class="cgu-global-nav-wrap">
     <div class="container">
       <div class="row">
-      <div class="navbar-header col-md-3">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        {% if page.header %}
-          {{ page.header }}
-        {% endif %}
-      </div>
-
-      <!-- Navigation -->
-      <div class="col-md-9">
-        {% if page.primary_menu %}
-          {{ page.primary_menu }}
-        {% endif %}      
-      </div>
-      <!--End Navigation -->
-
-      </div>
-    </div>
-  </nav>
-
-  <!-- Banner -->
-  {% if is_front and page.slideshow %}  
-    <div class="container slideshow">
-      <div class="row">
-        <div class="col-md-12">
-            {{ page.slideshow }}
+        <div class="col-xs-12">
+          <a href="#" class="menu-open">
+            <i class="icon-menu-hamburger"></i>
+            <span>Menu</span>
+          </a>
+          <a class="brand" href="/" itemprop="url">
+            <img src="/themes/bootstrap_mint/build/img/CGU_logo-green.svg" data-png="/themes/bootstrap_mint/build/img/CGU_logo-green.png" alt="CGU" class="cgu-logo hidden-sm hidden-xs" itemprop="logo">
+          </a>
+          <a href="#skipTo" class="skipTo">Skip to content</a>
+          <div class="right-wrap">
+            <nav class="navigation cgu-global-nav">
+              <ul>
+                <li>
+                  <a href="#">
+                    <span>For Advisors</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/about-us-landing-page-refresh.html">
+                    <span>About us</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/claims-landing-refresh.html">
+                    <span>Claims</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Contact us</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="search-wrapper">
+              <input class="search-box" type="text" placeholder="Search...">
+              <div class="search-btn-wrap">
+                <a href="#" class="">
+                  <i class="icon-search"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="contact-xs">
+            <span>Contact</span>
+            <i class="icon-phone"></i>
+          </a>
         </div>
       </div>
     </div>
-  {% endif %}
-  <!-- End Banner -->
-
+  </div>
+  <div class="products-nav-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="search-wrapper">
+            <input class="search-box" type="text" placeholder="Search...">
+            <div class="search-btn-wrap">
+              <a href="#" class="">
+                <i class="icon-search"></i>
+              </a>
+            </div>
+            <a href="#" class="menu-close">
+              <i class="icon-cancel-close-exit"></i>
+            </a>
+          </div>
+            {% if page.primary_menu %}
+                {{ page.primary_menu }}
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chatlive-tray-container visible-xs visible-sm">
+    <a href="#" class="button chatlive-tray-tab">
+	<span>
+	<i class="icon-content-chat-discussion"></i>Talk to Us</span>
+    </a>
+    <div class="chatlive-tray">
+      <div class="chatlive-content">
+        <div class="brand">
+          <h3 class="tagline">
+            <div class="logo">
+              <img src="img/logo-header.svg" data-png="img/logo-header.png" alt="CGU" class="cgu-logo" itemprop="logo">
+            </div>
+            We're here for you </h3>
+          <p>
+            Whether you need make a claim or to ask a question we're only a phone call away.
+          </p>
+        </div>
+        <div class="blocks">
+          <div id="lpButtonDiv-Slideout">
+          </div>
+          <div class="tray__block">
+            <h4>For claims</h4>
+            <a href="tel:13 24 80" class="call-btn call-btn--green">
+              <span>Call</span>
+              <span>13 24 80</span>
+            </a>
+            <p>
+              24 hours, 7 days a week
+            </p>
+            <h4>For general enquiries</h4>
+            <a href="tel:13 24 81" class="call-btn call-btn--blue">
+              <span>Call</span>
+              <span>13 24 81</span>
+            </a>
+            <p>
+              8:30am to 5:00pm
+            </p>
+            <h4>While overseas</h4>
+            <a href="tel:+61 3 9601 8222" class="cgu-chevron">Call <span>+61 3 9601 8222</span>
+            </a>
+          </div>
+          <div class="tray__block">
+            <h4>Need your current policy documents?</h4>
+            <a href="#" class="cgu-chevron">
+              <span>Request Certificate of Currency</span>
+            </a>
+            <a href="#" class="cgu-chevron">
+              <span>Request Certificate of Insurance</span>
+            </a>
+            <a href="#" class="cgu-chevron">
+              <span>Request Tax Invoice</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {#<?php if (isset($node_home_header) && $node_home_header) : ?>#}
+  {#<?php print $node_home_header; ?>#}
+  {#<?php endif; ?>#}
 </header>
 <!--End Header & Navbar -->
-
-
-<!--Search-->
-  {% if is_front and page.search %}
-    {{ page.search }}
-  {% endif %}
-<!--End Search-->
 
 
 <!--Home page banner-->

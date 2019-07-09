@@ -46,8 +46,5 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
 ]
 %}
-    <article{{ attributes.addClass(classes) }}>
-            {{ content.field_text_long }}
-        {{ trimmed_long_text }}
-            {#{{ dump(content) }}#}
-    </article>
+
+{{ trimmed_long_text|raw }}

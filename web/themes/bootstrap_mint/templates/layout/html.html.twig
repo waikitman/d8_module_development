@@ -36,7 +36,7 @@
     page.sidebar_second and not page.sidebar_first ? 'sidebar-second',
     page.sidebar_first and page.sidebar_second ? 'both-sidebars',
 	user.hasPermission('administer')  ? 'admin',
-	user.getRoles()|join(' role_')
+	user.getRoles()|join(' role_'),
   ]
 %}
 <!DOCTYPE html>
@@ -48,12 +48,15 @@
     <js-placeholder token="{{ placeholder_token|raw }}">
   </head>
   <body{{ attributes.addClass(body_classes) }}>
+  {{ page_top }}
+    <div class="page-wrapper refresh">
     <a href="#main-content" class="visually-hidden focusable skip-link">
       {{ 'Skip to main content'|t }}
     </a>
-    {{ page_top }}
     {{ page }}
+      <div class="menu-blackout"></div>
     {{ page_bottom }}
+    </div>
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
   </body>
 </html>

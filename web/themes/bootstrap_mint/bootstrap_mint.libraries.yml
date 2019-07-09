@@ -50,11 +50,15 @@ global-components:
   Version: VERSION
   css:
     theme:
-      css/base.css: {}
-      css/style.css: {}
-      css/media.css: {}
+#      css/base.css: {}
+#      css/style.css: {}
+#      css/media.css: {}
+      css/refresh.min.css: {}
+      css/refresh-bootstrap.min.css: {}
   js:
     js/bootstrap-mint.js: {}
+    js/refresh.min.js: {}
+    js/refresh-plugins.min.js: {}
   dependencies:
     - core/jquery
     - core/drupal.ajax
@@ -72,3 +76,10 @@ maintenance-page:
     - bootstrap_mint/googlefonts-exo2
     - bootstrap_mint/bootstrap
     - bootstrap_mint/global-components
+
+cloud-typography:
+#  remote: https://cloud.typography.com/
+#  version: VERSION
+  css:
+    theme:
+      https://cloud.typography.com/7246376/6106172/css/fonts.css: { type: external, minified: true }

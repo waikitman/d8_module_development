@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>CGU</title>
+        <meta name="description" content="">
+        <meta content="width=320.1, initial-scale=1, user-scalable=no" name="viewport">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        
+	    <style>
+			@media (max-width: 480px) {
+				@-ms-viewport {
+					width: 320px;
+				}
+			}
+
+			@import url("//fast.fonts.net/t/1.css?apiType=css&projectid=256bf78d-b72f-4dea-9974-9d875b51c3c8");
+			@font-face{
+				font-family:"Neue Helvetica W02_i4";
+				src:url("../fonts/myfonts/97787ad0-77de-4ad8-822f-7deba0c632ee.eot?#iefix") format("eot")
+			}
+			@font-face{
+				font-family:"Neue Helvetica W02";
+				src:url("../fonts/myfonts/97787ad0-77de-4ad8-822f-7deba0c632ee.eot?#iefix");
+				src:url("../fonts/myfonts/97787ad0-77de-4ad8-822f-7deba0c632ee.eot?#iefix") format("eot"),url("fonts/myfonts/47a4e844-a7b2-4195-a8dd-8b281e43aa83.woff") format("woff"),url("fonts/myfonts/f1ebe4f0-1d5e-4805-b348-bd02a294a14d.ttf") format("truetype"),url("fonts/myfonts/88ec594a-6ee9-43d8-80c2-60e869843f5e.svg#88ec594a-6ee9-43d8-80c2-60e869843f5e") format("svg");
+				font-weight: 400;
+				font-style: italic;
+			}
+			@font-face{
+				font-family:"Neue Helvetica W02_n4";
+				src:url("../fonts/myfonts/0b3a3fca-0fad-402b-bd38-fdcbad1ef776.eot?#iefix") format("eot")
+			}
+			@font-face{
+				font-family:"Neue Helvetica W02";
+				src:url("../fonts/myfonts/0b3a3fca-0fad-402b-bd38-fdcbad1ef776.eot?#iefix");
+				src:url("../fonts/myfonts/0b3a3fca-0fad-402b-bd38-fdcbad1ef776.eot?#iefix") format("eot"),url("fonts/myfonts/d5af76d8-a90b-4527-b3a3-182207cc3250.woff") format("woff"),url("fonts/myfonts/1d238354-d156-4dde-89ea-4770ef04b9f9.ttf") format("truetype"),url("fonts/myfonts/b68875cb-14a9-472e-8177-0247605124d7.svg#b68875cb-14a9-472e-8177-0247605124d7") format("svg");
+				font-weight: 400;
+				font-style: normal;
+			}
+			@font-face{
+				font-family:"Neue Helvetica W02_i6";
+				src:url("../fonts/myfonts/df70ae1d-3814-4926-a2f3-423580c519c8.eot?#iefix") format("eot")
+			}
+			@font-face{
+				font-family:"Neue Helvetica W02";
+				src:url("../fonts/myfonts/df70ae1d-3814-4926-a2f3-423580c519c8.eot?#iefix");
+				src:url("../fonts/myfonts/df70ae1d-3814-4926-a2f3-423580c519c8.eot?#iefix") format("eot"),url("fonts/myfonts/41f91d0c-88d0-4d14-8d12-e40697e981b8.woff") format("woff"),url("fonts/myfonts/eeb4a788-7a0b-4e01-b860-205706e7cd81.ttf") format("truetype"),url("fonts/myfonts/4d6955ef-961d-4337-9320-bee672fddd86.svg#4d6955ef-961d-4337-9320-bee672fddd86") format("svg");
+				font-weight: 600;
+				font-style: italic;
+			}
+			@font-face{
+				font-family:"Neue Helvetica W02_n6";
+				src:url("../fonts/myfonts/db853e0e-929b-4272-b420-c946c954cf3a.eot?#iefix") format("eot")
+			}
+			@font-face{
+				font-family:"Neue Helvetica W02";
+				src:url("../fonts/myfonts/db853e0e-929b-4272-b420-c946c954cf3a.eot?#iefix");
+				src:url("../fonts/myfonts/db853e0e-929b-4272-b420-c946c954cf3a.eot?#iefix") format("eot"),url("fonts/myfonts/4a9c62ab-b359-4081-8383-a0d1cdebd111.woff") format("woff"),url("fonts/myfonts/db5f9ba6-05a4-433a-9461-0a6f257a0c3a.ttf") format("truetype"),url("fonts/myfonts/25e09910-ffc3-4fc4-b0d1-db9a95dface8.svg#25e09910-ffc3-4fc4-b0d1-db9a95dface8") format("svg");
+				font-weight: 600;
+				font-style: normal;
+			}
+			p, h3, .content-module li, .content-module a, h5, input {
+				font-family:'Neue Helvetica W02', "Comic Sans MS" !important; 
+			}
+			p {
+				font-family:'Neue Helvetica W02', "Comic Sans MS" !important; 
+				font-weight: 400 !important; 
+				font-style:normal !important; 
+			}
+			p em {
+				font-family:'Neue Helvetica W02', "Comic Sans MS" !important; 
+				font-weight:400 !important; 
+				font-style:italic !important;
+			}
+			p strong {
+				font-family:'Neue Helvetica W02', "Comic Sans MS" !important; 
+				font-weight:600 !important;
+				font-style:normal !important; 
+			}
+			p strong em {
+				font-family:'Neue Helvetica W02', "Comic Sans MS" !important;
+				font-weight:600 !important;
+				font-style:italic !important;
+			}
+			
+	    </style>
+
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152-precomposed.png">
+		<link rel="icon" sizes="16x16 24x24 32x32 64x64" href="/favicon.ico">
+		<meta name="msapplication-TileColor" content="#ffffff"/>
+		<meta name="msapplication-TileImage" content="/msapplication-TileImage.png"/>
+	    
+    </head>
+    <body>
+	    <!-- opening Kentico form -->
+	    <form action="https://cgucommunity.force.com/customerdirect/getaquote">
+	    
+	    <header class="whole-header">
+	        <nav class="global-nav">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<ul class="menu main-global">
+					<li><a href="personal-landing-page.html">Personal</a></li><!--
+					--><li class="active"><a href="business-landing-page.html">Business</a></li><!--
+					--><li><a href="about-us-landing-page.html">About us</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-6">
+				<ul class="text-right menu">
+					<li><a href="#">Advisers</a></li><!--
+					--><li class="existing-customers"><a href="#">Partner Portal</a></li><!--
+					--><li class="icon"><a href="http://www.twitter.com/CGUInsurance" target="_blank" title="CGU on Twitter"><i class="icon-social-twitter"></i></a></li>
+					<li class="icon"><a href="http://www.facebook.com/CGUInsurance" target="_blank" title="CGU on Facebook"><i class="icon-social-facebook"></i></a></li>
+					<li class="icon"><a href="http://www.youtube.com/CGUInsurance" target="_blank" title="CGU on YouTube"><i class="icon-social-youtube"></i></a></li>
+					<li class="icon"><a href="http://www.linkedin.com/company/cgu" target="_blank" title="CGU on LinkedIn"><i class="icon-social-linkedin"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>
+	        <a href="#content" class="sr-only">Skip to content</a>
+<div class="site-header" itemscope itemtype="http://schema.org/Organization">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-2 text-center">
+				<span itemprop="name" class="hidden">CGU</span>
+				<a href="http://www.cgu.com.au/insurance/Business" itemprop="url"><img src="img/logo-header.svg" data-png="img/logo-header.png" alt="CGU" class="cgu-logo" itemprop="logo" /></a>
+			</div>
+			<div class="col-sm-10 text-right position-static">
+                <nav class="site-nav">
+					<ul class="menu">
+						<li>
+							<a href="http://www.cgu.com.au/insurance/Business/Explore-Business" id="p_lt_ctl02_MEGAmenu_linkExplore">Explore <span class="hidden-md-menu">Business</span></a>
+						</li>
+						<li>
+							<a href="http://www.cgu.com.au/insurance/Business/Products" id="p_lt_ctl02_MEGAmenu_linkBusinessProducts">Products</a>
+						</li>
+                        <li id="p_lt_ctl02_MEGAmenu_liWorkersComp">
+							<a href="http://www.cgu.com.au/insurance/Business/Workers-Compensation" id="p_lt_ctl02_MEGAmenu_linkWorkersComp">Workers Comp</a>
+						</li>
+						<li>
+							<a href="http://www.cgu.com.au/insurance/Business/Claims" id="p_lt_ctl02_MEGAmenu_linkClaims">Claims</a>
+						<li>
+							<a href="http://www.cgu.com.au/insurance/Business/Find-an-insurance-adviser" id="p_lt_ctl02_MEGAmenu_linkFindAnAdviser">Find Adviser</a>
+						</li>
+						<li>
+							<a href="http://www.cgu.com.au/insurance/Business/Contact" id="p_lt_ctl02_MEGAmenu_linkContact">Contact
+                                <span class="hidden-md-menu highlight-secondary"> 
+                                    13 24 81
+							    </span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+	    </header>
+
+
+
+
+<div class="ss-header-container">
+	<div class="ss-header">
+		<div class="ss-header-left">
+			<div class="ss-header-menu-button"><i class="icon-menu-hamburger"></i></div>
+			<div class="ss-header-logo hidden-sm"><a href="http://www.cgu.com.au"><img src="img/logo-footer.svg" data-png="img/logo-footer.png" alt="CGU" class="cgu-logo"/></a></div>
+			<div class="ss-header-logo visible-sm"><a href="http://www.cgu.com.au"><img src="img/ss-logo-header-sm.svg" data-png="img/ss-logo-header-sm.png" alt="CGU" class="cgu-logo" /></a></div>
+		</div>
+		<div class="ss-header-blackout"></div>
+		<div class="ss-header-right">
+			<div class="ss-header-phone">13 24 81</div>
+			<div class="ss-header-search-button">
+				<i class="icon-cancel-close-exit close-search-button"></i>
+				<input type="text" class="sm-search" name="s" placeholder="What are you looking for?" />
+				<input type="submit" class="" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<nav id="ss-menu" class="mm-menu mm-vertical mm-front">
+	<ul>
+		<li class="mm-selected"><img src="img/ss-logo-header-xs.svg" data-png="img/logo-header.png" alt="CGU" class="cgu-logo" /><a href="personal-landing-page.html" class="ss-link">Personal</a>
+			<ul>
+				<li data-megamenu="personal-explore"><a href="#" class="ss-link">Explore</a>
+					<ul>
+						<li><a href="#">Explore Overview</a></li>
+						<li><a href="#">Insuring my car</a></li>
+						<li><a href="#">Insuring my home & contents</a></li>
+						<li><a href="#" class="ss-link">Calculators</a>
+							<ul>
+								<li><a href="#">Home building calculator</a></li>
+								<li><a href="#">Home contents calculator</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Travelling safe</a></li>
+						<li><a href="#">Planning for the unthinkable</a></li>
+						<li><a href="#">Insurance for landlords</a></li>
+						<li><a href="#">Insuring my boat</a></li>
+						<li><a href="#">Insuring my caravan</a></li>
+						<li><a href="#">Keeping safe</a></li>
+						<li><a href="#">Why use an Insurance Adviser?</a></li>
+						<li><a href="#">Have enough insurance</a></li>
+						<li><a href="#">How claims work</a></li>
+						<li><a href="#">How premiums are calculated</a></li>
+						<li><a href="#">Preparing for natural disasters</a></li>
+					</ul>
+				</li>
+				<li data-megamenu="personal-products"><a href="#" class="ss-link">Products</a>
+					<ul>
+						<li><a href="#">Products Overview</a></li>
+						<li><a href="#" class="ss-link">Car Insurance</a>
+							<ul>
+								<li><a href="#">Comprehensive car insurance</a></li>
+								<li><a href="#">Third Party Fire and Theft insurance</a></li>
+								<li><a href="#">Third Party Property Damage insurance</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="ss-link">Home Insurance</a>
+							<ul>
+								<li><a href="#">Accidental Damage Home insurance</a></li>
+								<li><a href="#">Listed Events Home insurance</a></li>
+								<li><a href="#">Fundamentals Home insurance</a></li>
+								<li><a href="#">Home Contents Transit insurance</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Travel insurance</a></li>
+						<li><a href="#">Landlords insurance</a></li>
+						<li><a href="#">Boat insurance</a></li>
+						<li><a href="#">Life insurance</a></li>
+						<li><a href="#">Residential Strata insurance</a></li>
+						<li><a href="#">Caravan insurance</a></li>
+					</ul>
+				</li>
+				<li data-megamenu="personal-claims"><a href="#" class="ss-link">Claims</a>
+					<ul>
+						<li><a href="#">Claims Overview</a></li>
+						<li><a href="#">Making a claim</a></li>
+						<li><a href="#">Workers compensation</a></li>
+						<li><a href="#">Dispute resolution</a></li>
+						<li><a href="#">Claims FAQ</a></li>
+						<li><a href="#" class="ss-link">Preferred suppliers</a>
+							<ul>
+								<li><a href="#">Choosing a preferred supplier</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="find-an-adviser-landing.html">Find adviser</a></li>
+				<li><a href="contact-us.html">Contact</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="business-landing-page.html" class="mm-subopen"></a>
+			<a href="business-landing-page.html">Business</a>
+		</li>
+		<li>
+			<a href="about-us-landing-page.html" class="mm-subopen"></a>
+			<a href="about-us-landing-page.html">About us</a>
+		</li>
+		<li class="ss-menu-utility">
+			<a href="#" class="ss-link">Sign in</a>
+			<span class="ss-menu-utility-divider"></span>
+		</li>
+		<li class="ss-menu-utility"><a href="for-advisers-landing-page.html">For advisers</a></li>
+	</ul>
+</nav>
+
+<nav id="ss-sm-megamenu-personal-explore" class="ss-sm-megamenu">
+	<div class="megamenu-content">
+		<div class="col-sm-12 ss-sm-megamenu-row">
+			<h2><a href="#">Explore Personal</a></h2>
+			<div class="row">
+				<div class="col-sm-6">
+					<ul class="megamenu-items">
+						<li><a href="#">Insuring my car</a></li>
+						<li><a href="#">Insuring my home & contents</a></li>
+						<li><a href="#">Calculators</a></li>
+						<li><a href="#">Travelling safe</a></li>
+						<li><a href="#">Planning for the unthinkable</a></li>
+						<li><a href="#">Insurance for landlords</a></li>
+						<li><a href="#">Insuring my boat</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-6">
+					<ul class="megamenu-items">
+						<li><a href="#">Insuring my caravan</a></li>
+						<li><a href="#">Keeping safe</a></li>
+						<li><a href="#">Why use an Insurance Adviser?</a></li>
+						<li><a href="#">Have enough insurance</a></li>
+						<li><a href="#">How claims work</a></li>
+						<li><a href="#">How premiums are calculated</a></li>
+						<li><a href="#">Preparing for natural disasters</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<nav id="ss-sm-megamenu-personal-products" class="ss-sm-megamenu">
+	<div class="megamenu-content">
+		<div class="col-sm-12 ss-sm-megamenu-row">
+			<h2>Personal Insurance</h2>
+			<div class="row">
+				<div class="col-xs-6">
+					<ul class="megamenu-items">
+						<li><a href="temp-car-insurance.html">Car Insurance</a></li>
+						<li><a href="#">Home Insurance</a></li>
+						<li><a href="#">Travel insurance</a></li>
+						<li><a href="#">Landlords insurance</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-6">
+					<ul class="megamenu-items">
+						<li><a href="#">Boat insurance</a></li>
+						<li><a href="#">Life insurance</a></li>
+						<li><a href="#">Residential Strata insurance</a></li>
+						<li><a href="#">Caravan insurance</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<nav id="ss-sm-megamenu-personal-claims" class="ss-sm-megamenu">
+	<div class="megamenu-content">
+		<div class="col-sm-12 ss-sm-megamenu-row">
+			<h2><a href="#">Claims</a></h2>
+			<div class="row">
+				<div class="col-xs-6">
+					<ul class="megamenu-items">
+						<li><a href="#">Making a claim</a></li>
+						<li><a href="#">Workers compensation</a></li>
+						<li><a href="#">Dispute resolution</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-6">
+					<ul class="megamenu-items">
+						<li><a href="#">Claims FAQ</a></li>
+						<li><a href="#">Preferred suppliers</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+
+
+<div itemscope itemtype="http://schema.org/Product" id="font-test">
+<header class="clear-header content has-image-bg" id="content">
+	<div class="container">
+		<div class="row" style="background-image:url('img/samples/content-page-header-bg.png');">
+			<div class="col-xs-12">
+				<nav class="breadcrumbs">
+	<!--<ol>
+		<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> -->
+			<a href="business-landing-page.html" itemprop="url">Business home</a> –
+		<!-- </li>
+		<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> -->
+			<a href="#" itemprop="url">Products</a>
+		<!-- </li>
+	</ol> -->
+</nav>
+			</div>
+			<div class="col-xs-12 col-sm-8">
+				<h1 itemprop="name">Information Technology Liability Insurance</h1>
+				<p class="callout">CGU Information Technology Liability Insurance is designed to protect the assets of information technology professionals and businesses.</p>
+			</div>
+			<div class="col-xs-12 col-sm-4">
+				<div class="header-image-box">
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section class="content-module description">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-8 hard-right">
+				<div class="alt-bg padding" itemprop="description">
+					<h3>What is Information Technology Liability Insurance?</h3>
+
+					<p>IT professionals and businesses can be liable for advice and/or services they have provided that cause financial loss to a third party. CGU Information Technology Liability Insurance combines professional indemnity insurance with public and products liability cover to give you comprehensive protection.</p>
+					
+					<p>This policy provides protection for a broad range of civil liabilities arising from the provision of information technology services.</p>
+
+					<div class="key-features">
+						<h3>Key Features</h3>
+						<ul>
+							<li>Cover for loss of documents, including electronic data, and reasonable costs, charges and expenses incurred in replacing or restoring such documents/data</li>
+							<li>Intellectual property cover extends to include unintentional infringement of circuit layout rights</li>
+							<li>Claims investigation costs, i.e. legal defence costs are paid in addition to the policy limit</li>
+							<li>No date recognition (Y2K) exclusion</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 widget">
+				<div class="widget-primary-cta">
+	<h3>Get a Quote Online</h3>
+	<p>Small business insurance made for you.</p>
+	<div class="call-to-action">
+		<a href="#">Get a quote now</a>
+	</div>
+</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 widget">
+				<div class="find-an-adviser">
+	<h3>Find an adviser</h3>
+	<p>To get a quote for Information Technology Liability Insurance</p>
+	<h4>Speak to an insurance adviser</h4>
+	<input type="text" class="suburb-or-postcode" placeholder="Suburb or postcode" /><button type="submit" class="submit"><i class="icon-arrow-1-right"></i></button>
+</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="content-module key-features">
+	<div class="container">
+	    <div class="row">
+	        <div class="col-xs-12">
+	            <h3>Key Features</h3>
+	        </div>
+	    </div>
+	    <div class="row">
+	        <div class="col-md-8">
+	        	<ul>
+	        		<li>
+	        			<p>Cover for loss of documents, including electronic data, and reasonable costs, charges and expenses incurred in replacing or restoring such documents/data</p>
+	        			<ul>
+	        				<li>Example bullet points</li>
+	        				<li>Example bullet points</li>
+	        			</ul>
+	        		</li>
+	        		<li>
+	        			<p>Intellectual property cover extends to include unintentional infringement of circuit layout rights</p>
+	        		</li>
+	        		<li>
+						<p>Claims investigation costs, i.e. legal defence costs are paid in addition to the policy limit</p>
+	        		</li>
+	        		<li>
+						<p>No date recognition (Y2K) exclusion</p>
+	        		</li>
+	        	</ul>
+	        	<div class="callout-box">
+	        		<h3>CGU Farm Risk Radar</h3>
+	        		<p>IT professionals and businesses can be liable for advice and/or services they have provided that cause financial loss to a third party. CGU Information Technology Liability Insurance combines professional indemnity insurance with public and products liability cover to give you comprehensive protection.</p>
+	        		<div class="call-to-action">
+	        			<a href="#" target="_blank">Launch the CGU Farm Risk Radar</a>
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="col-md-4">
+	        	<!-- <div class="side-notes alt-bg">
+	            	<h5>Something not here?</h5>
+					<p>Can’t find cover for what you need? Speak to an <a href="#">insurance adviser</a> today about your business needs.</p>
+	        	</div> -->
+	        </div>
+	    </div>
+	</div>
+</section>
+
+<section class="content-module forms-and-downloads">
+	<div class="container">
+	    <div class="row">
+	        <div class="col-xs-12">
+	            <h3>Forms and downloads</h3>
+	        </div>
+	    </div>
+	    <div class="row">
+	        <div class="col-md-8">
+	        	<ul>
+	        		<li>
+	        			<a href="#">Coronary Artery Bypass Graft Surgery - Trauma Claim Form (PDF, 192kb)</a>
+	        		</li>
+	        		<li>
+	        			<a href="#">Disability Claims Form (PDF, 120kb) </a>
+	        		</li>
+	        		<li>
+						<a href="#">Heart Attack - Trauma Claim Form (PDF, 207kb)</a>
+	        		</li>
+	        		<li>
+						<a href="#">Life Claims Form (PDF, 87kb)</a>
+	        		</li>
+	        	</ul>
+	        	<div class="clearfix"></div>
+	        </div>
+	        <div class="col-md-4">
+	        	<div class="side-notes alt-bg">
+	            	<h5>Send me printed copies of these forms</h5>
+					<p><a href="#">Request forms</a></p>
+	        	</div>
+	        </div>
+	    </div>
+
+	    <div class="row no-gutter related-products">
+	<div class="col-xs-12 col-sm-6 col-md-3 title alt-bg">
+		<h1>Related products</h1>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-3 products full-link-target" itemprop="isRelatedTo" itemscope itemtype="http://schema.org/Product">
+		<h4 itemprop="name"><a href="#" itemprop="url">Corporate advantage management liability</a></h4>
+		<p itemprop="description">Excepteur sint occaecat cui datat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-3 products full-link-target" itemprop="isRelatedTo" itemscope itemtype="http://schema.org/Product">
+		<h4 itemprop="name"><a href="#" itemprop="url">Directors and officers liability</a></h4>
+		<p itemprop="description">Excepteur sint occaecat cui datat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-3 products full-link-target" itemprop="isRelatedTo" itemscope itemtype="http://schema.org/Product">
+		<h4 itemprop="name"><a href="#" itemprop="url">Directors and officers liability</a></h4>
+		<p itemprop="description">Excepteur sint occaecat cui datat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</div>
+	</div>
+</section>
+</div>
+
+
+      <footer>
+        <div class="upper-footer">
+          <div class="container">
+            <div class="row">
+              <nav>
+                <div class="col-xs-4 col-sm-2">
+                	<img src="img/logo-footer.svg" data-png="img/logo-footer.png" alt="CGU" class="logo" itemprop="logo">
+                </div>
+                <div class="col-xs-6 hidden-xs">
+                <ul class="no-bullets main">
+                <li class="col-xs-4"><a href="http://www.cgu.com.au/insurance/Personal" data-open-sitemap="personal">Personal</a></li>
+                <li class="col-xs-4"><a href="http://www.cgu.com.au/insurance/Business" data-open-sitemap="business">Business</a></li>
+                <li class="col-xs-4"><a href="http://www.cgu.com.au/insurance/About-CGU" data-open-sitemap="aboutus">About CGU</a></li>
+                </ul>
+                </div>
+                <div class="col-xs-8 col-sm-4">
+                  <ul class="no-bullets social-media">
+                    <li><a href="http://www.facebook.com/CGUInsurance" target="_blank" title="CGU on Facebook"><i class="icon-social-facebook"></i></a></li>
+                    <li><a href="http://www.twitter.com/CGUInsurance" target="_blank" title="CGU on Twitter"><i class="icon-social-twitter"></i></a></li>
+                    <li><a href="http://www.youtube.com/CGUInsurance" target="_blank" title="CGU on Youtube"><i class="icon-social-youtube"></i></a></li>
+                    <li><a href="http://www.linkedin.com/company/cgu" target="_blank" title="CGU on LinkedIn"><i class="icon-social-linkedin"></i></a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="sitemap-box">
+          <div class="container personal">
+            <div class="row">
+              <nav>
+                <div class="col-xs-3">
+                  <h4>Topics</h4>
+                  <ul>
+                    <li><a href="#">Insuring my car</a></li>
+                    <li><a href="#">Insuring my home & contents</a></li>
+                    <li><a href="#">Calculators</a>
+                      <ul>
+                        <li><a href="#">Home building calculator</a></li>
+                        <li><a href="#">Home & contents calculator</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Travelling safe</a></li>
+                    <li><a href="#">Planning for the unthinkable</a></li>
+                    <li><a href="#">Insurance for landlords</a></li>
+                    <li><a href="#">Insuring my boat</a></li>
+                    <li><a href="#">Insuring my caravan</a></li>
+                    <li><a href="#">Keeping safe</a></li>
+                  </ul>
+                </div>
+                <div class="col-xs-3">
+                  <h4>Products</h4>
+                  <ul>
+                    <li><a href="temp-car-insurance.html">Car insurance</a>
+                      <ul>
+                        <li><a href="temp-car-insurance-comprehensive.html">Comprehensive car insurance</a></li>
+                        <li><a href="#">Third party fire and theft insurance</a></li>
+                        <li><a href="#">Third party property damage insurance</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Home insurance</a>
+                      <ul>
+                        <li><a href="#">Accidental damage home insurance</a></li>
+                        <li><a href="#">Listed events home insurance</a></li>
+                        <li><a href="#">Fundamentals home insurance</a></li>
+                        <li><a href="#">Home contents transit insurance</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Travel insurance</a></li>
+                    <li><a href="#">Life insurance</a></li>
+                    <li><a href="#">Landlords insurance</a></li>
+                    <li><a href="#">Residential strata insurance</a></li>
+                    <li><a href="#">Boat insurance</a></li>
+                    <li><a href="#">Caravan insurance</a></li>
+                  </ul>
+                </div>
+                <div class="col-xs-3">
+                  <h4>Claims</h4>
+                  <ul>
+                    <li><a href="#">Making a claim</a></li>
+                    <li><a href="#">Workers compensation</a></li>
+                    <li><a href="#">Dispute resolution</a></li>
+                    <li><a href="#">Claims FAQ</a></li>
+                    <li><a href="#">Preferred suppliers</a>
+                      <ul>
+                        <li><a href="#">Choosing a preferred supplier</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-xs-3">
+                  <h4>Find an adviser</h4>
+                  <ul>
+                    <li><a href="#">Why use an insurance adviser?</a></li>
+                    <li><a href="#">Tips for selecting an insurance adviser</a></li>
+                  </ul>
+                  <h4>Contact us</h4>
+                  <ul>
+                    <li>Call 13 48 23</li>
+                    <li><a href="contact-us.html">Contact details</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <div class="container business">
+            <div class="row">
+              <nav>
+                <div class="col-xs-3">
+                  <h4>My business</h4>
+                  <ul>
+                    <li><a href="#">Starting a business</a></li>
+                    <li><a href="#">Employees</a></li>
+                    <li><a href="#">Workers Compensation</a></li>
+                    <li><a href="#">Indemnity</a></li>
+                    <li><a href="#">Business Insurance Assessment Services</a></li>
+                    <li><a href="#">Travelling safe</a></li>
+                    <li><a href="#">Planning for the unthinkable</a></li>
+                    <li><a href="#">Insurance for landlords</a></li>
+                    <li><a href="#">Insuring my boat</a></li>
+                    <li><a href="#">Insuring my caravan</a></li>
+                    <li><a href="#">Keeping safe</a></li>
+                  </ul>
+                </div>
+                <div class="col-xs-3">
+                  <h4>Products</h4>
+                  <ul>
+                    <li><a href="temp-car-insurance.html">Car insurance</a>
+                      <ul>
+                        <li><a href="temp-car-insurance-comprehensive.html">Comprehensive car insurance</a></li>
+                        <li><a href="#">Third party fire and theft insurance</a></li>
+                        <li><a href="#">Third party property damage insurance</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Home insurance</a>
+                      <ul>
+                        <li><a href="#">Accidental damage home insurance</a></li>
+                        <li><a href="#">Listed events home insurance</a></li>
+                        <li><a href="#">Fundamentals home insurance</a></li>
+                        <li><a href="#">Home contents transit insurance</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Travel insurance</a></li>
+                    <li><a href="#">Life insurance</a></li>
+                    <li><a href="#">Landlords insurance</a></li>
+                    <li><a href="#">Residential strata insurance</a></li>
+                    <li><a href="#">Boat insurance</a></li>
+                    <li><a href="#">Caravan insurance</a></li>
+                  </ul>
+                </div>
+                <div class="col-xs-3">
+                  <h4>Workers Comp</h4>
+                  <ul>
+                    <li><a href="#">Making a claim</a></li>
+                    <li><a href="#">Workers compensation</a></li>
+                    <li><a href="#">Dispute resolution</a></li>
+                    <li><a href="#">Claims FAQ</a></li>
+                    <li><a href="#">Preferred suppliers</a>
+                      <ul>
+                        <li><a href="#">Choosing a preferred supplier</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <h4>Claims</h4>
+                  <ul>
+                    <li><a href="#">Making a claim</a></li>
+                    <li><a href="#">Workers compensation</a></li>
+                    <li><a href="#">Dispute resolution</a></li>
+                    <li><a href="#">Claims FAQ</a></li>
+                    <li><a href="#">Preferred suppliers</a>
+                      <ul>
+                        <li><a href="#">Choosing a preferred supplier</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-xs-3">
+                  <h4>Find an adviser</h4>
+                  <ul>
+                    <li><a href="#">Why use an insurance adviser?</a></li>
+                    <li><a href="#">Tips for selecting an insurance adviser</a></li>
+                  </ul>
+                  <h4>Contact us</h4>
+                  <ul>
+                    <li>Call 13 48 23</li>
+                    <li><a href="#">Contact details</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <div class="container aboutus">
+            <div class="row">
+              <nav>
+                <div class="col-xs-3">
+                  <h4>Who we are</h4>
+                  <ul>
+                    <li><a href="#">Starting a business</a></li>
+                    <li><a href="#">Employees</a></li>
+                    <li><a href="#">Workers Compensation</a></li>
+                    <li><a href="#">Indemnity</a></li>
+                    <li><a href="#">Business Insurance Assessment Services</a></li>
+                    <li><a href="#">Travelling safe</a></li>
+                    <li><a href="#">Planning for the unthinkable</a></li>
+                    <li><a href="#">Insurance for landlords</a></li>
+                    <li><a href="#">Insuring my boat</a></li>
+                    <li><a href="#">Insuring my caravan</a></li>
+                    <li><a href="#">Keeping safe</a></li>
+                  </ul>
+                </div>
+                <div class="col-xs-3">
+                  <h4>CGU News</h4>
+                  <ul>
+                    <li><a href="temp-car-insurance.html">Car insurance</a>
+                      <ul>
+                        <li><a href="temp-car-insurance-comprehensive.html">Comprehensive car insurance</a></li>
+                        <li><a href="#">Third party fire and theft insurance</a></li>
+                        <li><a href="#">Third party property damage insurance</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Home insurance</a>
+                      <ul>
+                        <li><a href="#">Accidental damage home insurance</a></li>
+                        <li><a href="#">Listed events home insurance</a></li>
+                        <li><a href="#">Fundamentals home insurance</a></li>
+                        <li><a href="#">Home contents transit insurance</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Travel insurance</a></li>
+                    <li><a href="#">Life insurance</a></li>
+                    <li><a href="#">Landlords insurance</a></li>
+                    <li><a href="#">Residential strata insurance</a></li>
+                    <li><a href="#">Boat insurance</a></li>
+                    <li><a href="#">Caravan insurance</a></li>
+                  </ul>
+                </div>
+                <div class="col-xs-3">
+                  <h4>Careers</h4>
+                  <ul>
+                    <li><a href="#">Making a claim</a></li>
+                    <li><a href="#">Workers compensation</a></li>
+                    <li><a href="#">Dispute resolution</a></li>
+                    <li><a href="#">Claims FAQ</a></li>
+                    <li><a href="#">Preferred suppliers</a>
+                      <ul>
+                        <li><a href="#">Choosing a preferred supplier</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-xs-3">
+                  <h4>Contact us</h4>
+                  <ul>
+                    <li>Call 13 48 23</li>
+                    <li><a href="#">Contact details</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="lower-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <nav>
+                <ul class="menu main-global">
+                  <li class=""><a href="http://www.cgu.com.au/insurance/About-CGU">About CGU</a></li>
+                  <li class=""><a href="http://www.cgu.com.au/insurance/Contact">Contact</a></li>
+                  <li class=""><a href="http://www.cgu.com.au/insurance/Privacy-Security">Privacy</a></li>
+                  <li class=""><a href="http://www.cgu.com.au/insurance/Terms-of-use">Terms of use</a></li> 
+                </ul>
+              </nav>
+            </div>
+            <div class="col-xs-12">
+              <div class="disclaimer">
+                <p>
+  Insurance issued by CGU Insurance Ltd. © 2013 CGU Insurance Limited | ABN <span>27 004</span> 478 371 | AFS License No. 23829. The advice on this website is general advice only and does not take into account&nbsp; your individual objectives, financial situation or needs (“your personal circumstances” ). Before using this advice to decide whether to purchase the insurance policy, you should consider your personal circumstances and the relevant Product Disclosure Statement available on this website.</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </footer>
+      <div class="menu-blackout"></div>
+
+      <script src="js/main.min.js"></script>
+      <!--[if lt IE 9]>
+      <script src="js/vendor/respond.js"></script>
+      <script src="js/vendor/detect-zoom.js"></script>
+      <![endif]-->
+      
+      </form>
+      <!-- closing Kentico form -->
+    </body>
+</html>
