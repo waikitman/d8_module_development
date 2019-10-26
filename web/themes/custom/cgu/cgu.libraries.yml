@@ -1,0 +1,23 @@
+global-components:
+  Version: VERSION
+  css:
+    theme:
+      #      css/base.css: {}
+      #      css/style.css: {}
+      #      css/media.css: {}
+      cgu_fed_build/css/refresh.min.css: {}
+      cgu_fed_build/css/refresh-bootstrap.min.css: {}
+  js:
+    cgu_fed_build/js/refresh.min.js: {}
+    cgu_fed_build/js/refresh-plugins.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
+fonts:
+  css:
+    theme:
+      '//cloud.typography.com/7246376/6106172/css/fonts.css': { type: external, minified: true }
